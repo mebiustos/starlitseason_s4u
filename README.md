@@ -60,7 +60,7 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
 
 8. s4uフォルダを右クリックし表示されたメニューから「エクスプローラーで開く」を選択し、s4uフォルダをエクスプローラーで表示します。
 
-9. s4uフォルダにダウンロードしたC#マクロファイルを配備します。
+9. s4uフォルダにダウンロードしたC#マクロファイルを配備します。ダウンロードは[GitHub:starlitseason_s4u](https://github.com/mebiustos/starlitseason_s4u)のCode>DownloadZipにて。
 ```plaintext
 /script
   └── /アイドルマスター スターリットシーズン （現在選択中)
