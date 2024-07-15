@@ -167,7 +167,7 @@ public class S4UCore
         return this.s4uEffect;
     }
 
-    public Keys[] KeysAllay(params Keys[] keys)
+    public Keys[] KeysArray(params Keys[] keys)
     {
         return keys;
     }
