@@ -3,7 +3,12 @@
 This project provides a KeyToKey macro for automating various actions in the Starlit Season S4U mode.
 
 ## 概要
-このプロジェクトは、Starlit SeasonのS4Uモードでのアクションを自動化するためのKeyToKeyマクロを提供します。
+このプロジェクトは、Starlit SeasonのS4Uモードでのアクションを自動化するためのKeyToKeyマクロです。
+
+カメラワークと演出の自動化を目的としています。
+
+S4Uでの手動操作を簡易的に記録する記録モードと、指定した操作をミリ秒単位で再現する再生モードを提供します。
+また、４K環境限定になりますが、カスタムスロット設定を保存・復元する機能も提供します。
 
 ## 利用前の下準備1
 
