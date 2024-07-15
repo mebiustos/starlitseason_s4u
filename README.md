@@ -1,4 +1,4 @@
-# StarlitSeason S4U Auto Control Macro
+![image](https://github.com/user-attachments/assets/8621f9e6-dbfe-4a02-842a-4665c5355d1e)# StarlitSeason S4U Auto Control Macro
 
 This project provides a KeyToKey macro for automating various actions in the Starlit Season S4U mode.
 
@@ -16,27 +16,31 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
 
 2. 「プロファイルの操作」の「新規作成」を選択し、「アイドルマスター スターリットシーズン」という名前のプロファイルを作成します。
 
-   ![スクリーンショット](画像のURL)
+   ![2-img1](https://imgur.com/TJAKFsI.jpg)
+   
+   ![2-img2](https://imgur.com/nv3Gu4V.jpg)
+   
+   ![2-img3](https://imgur.com/VRn5LUg.jpg)
 
 3. 「プロファイルの操作」の「設定編集」をクリック。
 
-   ![スクリーンショット](画像のURL)
+   ![3-img1](https://imgur.com/MAZFCjg.jpg)
 
-5. 画面左メニューから、1つ目の歯車マーク（アプリケーションの設定）をクリックし、「仮想XInputコントローラー」の「使用する仮想コントローラーの数」を「1」に設定。
+4. 画面左メニューから、1つ目の歯車マーク（アプリケーションの設定）をクリックし、「仮想XInputコントローラー」の「使用する仮想コントローラーの数」を「1」に設定。
 
-   ![スクリーンショット](画像のURL)
+   ![4-img1](https://imgur.com/OP6zMA5.jpg)
 
-6. 画面左メニューから、2つめの歯車マーク（環境設定）をクリックし、「特定アプリでのみ実行を許可」の「以下のアプリで実行を許可する」にてプロセス名＋完全一致にてプロセス名「StarlitSeason-Win64-Shipping」を登録する。
+5. 画面左メニューから、2つめの歯車マーク（環境設定）をクリックし、「特定アプリでのみ実行を許可」の「以下のアプリで実行を許可する」にてプロセス名＋完全一致にてプロセス名「StarlitSeason-Win64-Shipping」を登録する。
 
-   ![スクリーンショット](画像のURL)
+   ![5-img1](https://imgur.com/OP6zMA5.jpg)
 
-8. Ctrl+Sを押して、ここまでの設定を一度保存しておきましょう。
+6. Ctrl+Sを押して、ここまでの設定を一度保存しておきましょう。
 
-9. 画面左メニューから、マクロの作成／設定を選択。
+7. 画面左メニューから、マクロの作成／設定を選択。
 
-   ![スクリーンショット](画像のURL)
+   ![7-img1](https://imgur.com/OgwfaCv.jpg)
 
-11. タブ「C#スクリプト（マクロ）」にて以下の通り、extensionsフォルダとその下にs4uフォルダを作成します。
+8. タブ「C#スクリプト（マクロ）」にて以下の通り、extensionsフォルダとその下にs4uフォルダを作成します。
 ```plaintext
 /script
   └── /アイドルマスター スターリットシーズン（現在選択中）
@@ -53,13 +57,13 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
   └── /アイドルマスター スターリットシーズン （現在選択中)
       ├── /extensions
       │   └── /s4u
-	  │       ├S4U.csx
-	  │       ├S4UCam.csx
-	  │       ├S4UCore.csx
-	  │       ├S4UEffect.csx
-	  │       ├S4UUtil.csx
-	  │       ├演出スロットツール.csx
-	  │       └記録.csx
+      │       ├S4U.csx
+      │       ├S4UCam.csx
+      │       ├S4UCore.csx
+      │       ├S4UEffect.csx
+      │       ├S4UUtil.csx
+      │       ├演出スロットツール.csx
+      │       └記録.csx
       └── _extension.csx
 ```
 11. _extension.csxをクリックし、先頭に以下の２行を追加します。
@@ -71,3 +75,5 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
 12. 画面左メニューから、割り当て設定（キーボード／マウス）を選択、マウスサイド２に「S4U記録」のマクロを割り当て。
 
     ![スクリーンショット](画像のURL)
+
+開発者MEMO: https://imgur.com/a/swFka9L
