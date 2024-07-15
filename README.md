@@ -2,6 +2,13 @@
 
 This project provides a KeyToKey macro for automating various actions in the Starlit Season S4U mode.
 
+## ドキュメント項目
+- [概要](#概要)
+- [利用前の下準備](#利用前の下準備)
+- [マクロの作成と実行](#マクロの作成と実行)
+- [マクロの作成](#マクロの作成)
+- [マクロの実行](#マクロの実行)
+
 ## 概要
 このプロジェクトは、Starlit SeasonのS4Uモードでのアクションを自動化するためのKeyToKeyマクロです。
 
