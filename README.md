@@ -297,7 +297,7 @@ s4u.SetCamGlobalTargetLeadMs(100);
 s4u.camDisable();
 s4u.camEnable();
 ```
-上記camDisableからcamEnableで挟まれた間にあるカメラ操作を全て無視します。
+camDisableからcamEnableで挟まれた間にあるカメラ関連コマンドを全て無視します。
 
 ## 開発者MEMO
 imgur管理URL: https://imgur.com/a/swFka9L
