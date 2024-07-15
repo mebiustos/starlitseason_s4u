@@ -64,18 +64,20 @@ public class S4UCam : S4UCore
     {
     }
 
-    public void SetTargetAfterWaitMs(int msec) {
+    public void SetTargetAfterWaitMs(int msec)
+    {
         this.targetAfterWaitMs = msec;
     }
-    
-    public void SetCamGlobalTargetLeadMs(int leadMs) {
+
+    public void SetCamGlobalTargetLeadMs(int leadMs)
+    {
         if (leadMs < 0)
         {
             throw new ArgumentException("offsetMs is only positive integers are allowed.");
         }
         this.camGlobalTargetLeadMs = leadMs;
     }
-    
+
     public void CamEnable()
     {
         this.camDisable = false;
@@ -92,7 +94,7 @@ public class S4UCam : S4UCore
         {
             return;
         }
-        
+
         if (this.isReserve != value)
         {
             this.ETap(msec, Keys.G);
@@ -106,7 +108,7 @@ public class S4UCam : S4UCore
         {
             return;
         }
-        
+
         this.ETapCamTarget(msec, target);
     }
 
@@ -116,7 +118,7 @@ public class S4UCam : S4UCore
         {
             return;
         }
-        
+
         if (this.camMode != camMode)
         {
             this.ETap(msec, Keys.Tab);
@@ -141,11 +143,12 @@ public class S4UCam : S4UCore
         {
             return;
         }
-        
+
         this.Cam(msec, this.currentCameraTarget, type);
     }
-    
-    public void Cam(long msec, CameraTarget target, CameraType type) {
+
+    public void Cam(long msec, CameraTarget target, CameraType type)
+    {
         this.Cam(msec, target, this.camGlobalTargetLeadMs, type);
     }
 
@@ -155,8 +158,10 @@ public class S4UCam : S4UCore
         {
             return;
         }
-        
+
         long targetMsec = msec - targetLeadMs;
+
+        this.CamReserve(targetMsec);
 
         switch (type)
         {
@@ -351,7 +356,7 @@ public class S4UCam : S4UCore
 
     private void PreNormal(long msec)
     {
-        this.CamReserve(msec);
+        //this.CamReserve(msec);
         if (this.camMode != CameraMode.Normal)
         {
             this.ETap(msec, Keys.Tab);
@@ -361,7 +366,7 @@ public class S4UCam : S4UCore
 
     private void PreFollow(long msec)
     {
-        this.CamReserve(msec);
+        //this.CamReserve(msec);
         if (this.camMode != CameraMode.Follow)
         {
             this.ETap(msec, Keys.Tab);
