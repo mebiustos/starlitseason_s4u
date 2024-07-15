@@ -1,4 +1,4 @@
-# StarlitSeason S4U Auto Control Macro
+![image](https://github.com/user-attachments/assets/42e9cfab-91e1-486c-a727-dc04edf02874)# StarlitSeason S4U Auto Control Macro
 
 This project provides a KeyToKey macro for automating various actions in the Starlit Season S4U mode.
 
@@ -12,7 +12,8 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
 
 ![概要-img1](https://imgur.com/nhePSDP.jpg)
 
-## 利用前の下準備1
+## 利用前の下準備
+このパートでは曲マクロの作成及び実行する為に必要な設定などを行います。
 
 1. KeyToKeyをインストールして起動します。
 
@@ -36,13 +37,11 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
 
    ![5-img1](https://imgur.com/yjf2EdE.jpg)
 
-6. Ctrl+Sを押して、ここまでの設定を一度保存しておきましょう。
+6. 画面左メニューから、マクロの作成／設定を選択。
 
-7. 画面左メニューから、マクロの作成／設定を選択。
+   ![6-img1](https://imgur.com/OgwfaCv.jpg)
 
-   ![7-img1](https://imgur.com/OgwfaCv.jpg)
-
-8. タブ「C#スクリプト（マクロ）」にて以下の通り、extensionsフォルダとその下にs4uフォルダを作成します。
+7. タブ「C#スクリプト（マクロ）」にて以下の通り、extensionsフォルダとその下にs4uフォルダを作成します。
 ```plaintext
 /script
   └── /アイドルマスター スターリットシーズン（現在選択中）
@@ -51,9 +50,9 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
       └── _extension.csx
 ```
 
-9. s4uフォルダを右クリックし表示されたメニューから「エクスプローラーで開く」を選択し、s4uフォルダをエクスプローラーで表示します。
+8. s4uフォルダを右クリックし表示されたメニューから「エクスプローラーで開く」を選択し、s4uフォルダをエクスプローラーで表示します。
 
-10. s4uフォルダにダウンロードしたC#マクロファイルを配備します。
+9. s4uフォルダにダウンロードしたC#マクロファイルを配備します。
 ```plaintext
 /script
   └── /アイドルマスター スターリットシーズン （現在選択中)
@@ -68,14 +67,81 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
       │       └記録.csx
       └── _extension.csx
 ```
-11. _extension.csxをクリックし、先頭に以下の２行を追加します。
+10. _extension.csxをクリックし、先頭に以下の２行を追加し、Ctrl+Sを押して保存します。
 ```
 #load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\記録.csx"
 #load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\演出スロットツール.csx"
 ```
 
-12. 画面左メニューから、割り当て設定（キーボード／マウス）を選択、マウスサイド２に「S4U記録」のマクロを割り当て。
+11. 画面左メニューから、割り当て設定（キーボード／マウス）を選択、マウスサイド２に「S4U記録」のマクロを割り当て。
 
     ![スクリーンショット](画像のURL)
+
+12. 画面左メニューの一番下のディスクマークをクリックし、ここまでの設定を保存しましょう。
+
+    ![12-img1](https://imgur.com/xQzRfBV.jpg)
+
+13. KeyToKeyのメインウィンドウから「コンソール＞表示」を選択しコンソールウィンドウを表示し、さらに「コンソール＞常に最前面に表示」を選択してコンソールが常に最前面に表示されるように設定してください。
+
+    邪魔な場合は最小化してください。（非表示ではない）
+
+## マクロの作成と実行
+このパートでは実際に曲「READY!」のマクロファイルを作成し、実際にマクロを実行します。
+
+### マクロの作成
+1. 曲用マクロファイルを作成。
+   
+   画面左メニューから、「マクロの作成／設定」を選択して「C#スクリプト（マクロ）タブ」を表示し、extensionsフォルダを右クリックして「新しいスクリプトを作成」を選択し、「READY.csx」を作成します。
+
+   ![mc1-img1](https://imgur.com/xhNLcCL.jpg)
+
+2.作成したREADY.csxを開き、 以下の通り作成し保存。
+```
+#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4U.csx"
+#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UCam.csx"
+#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UCore.csx"
+#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UEffect.csx"
+
+#define ライブ
+
+[Action]
+void READY()
+{
+#if ライブ
+
+    var s4u = new S4U(@this, "マクロサンプル曲 READY");
+    
+    // ユニット編成人数設定
+    s4u.SetIdolUnitSize(5);
+
+    // ライブ開始から13秒後にカメラを切り替え
+    s4u.Cam(13000, CameraTarget.No1, CameraType.F_アップ_足から頭へ);
+    // ライブ開始から15秒後にカメラをオートに
+    s4u.CamAuto(15000);
+    // ライブ開始から18秒後に演出スロット1実行
+    s4u.ETap(18001, Keys.NumPad1);
+
+    // 実行 - ライブ開始（ローディング終了）を待ち合わせ
+    s4u.Execute(); 
+
+#else
+#endif
+}
+```
+   
+3. _extension.csxに曲マクロを追加
+
+   _extension.csxをクリックし、先頭に以下の１行を追加し、Ctrl+Sを押して保存します。
+   
+```
+#load "Scripts\アイドルマスター スターリットシーズン\extensions\READY.csx"
+```
+
+4. 画面左メニューから、割り当て設定（キーボード／マウス）を選択、マウスサイド１に「READY」のマクロを割り当て。
+5. これで曲マクロを実行する準備が整いました。
+
+### マクロの実行
+
+
 
 開発者MEMO: https://imgur.com/a/swFka9L
