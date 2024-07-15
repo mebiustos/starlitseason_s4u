@@ -126,7 +126,7 @@ void READY()
     // ライブ開始から15秒後にカメラをオートに
     s4u.CamAuto(15000);
     // ライブ開始から18秒後に演出スロット1実行
-    s4u.ETap(18001, Keys.NumPad1);
+    s4u.ETap(18000, Keys.NumPad1);
 
     // 実行 - ライブ開始（ローディング終了）を待ち合わせ
     s4u.Execute(); 
