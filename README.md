@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/42e9cfab-91e1-486c-a727-dc04edf02874)# StarlitSeason S4U Auto Control Macro
+# StarlitSeason S4U Auto Control Macro
 
 This project provides a KeyToKey macro for automating various actions in the Starlit Season S4U mode.
 
