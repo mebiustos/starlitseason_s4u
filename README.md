@@ -10,6 +10,8 @@ This project provides a KeyToKey macro for automating various actions in the Sta
 S4Uでの手動操作を簡易的に記録する記録モードと、指定した操作をミリ秒単位で再現する再生モードを提供します。
 また、４K環境限定になりますが、カスタムスロット設定を保存・復元する機能も提供します。
 
+![概要-img1](https://imgur.com/nhePSDP.jpg)
+
 ## 利用前の下準備1
 
 1. KeyToKeyをインストールして起動します。
