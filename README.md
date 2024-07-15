@@ -158,6 +158,7 @@ void READY()
     s4u.Execute(); 
 
 #else
+    // 演出スロットの復元コード記述場所
 #endif
 }
 ```
