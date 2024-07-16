@@ -1,4 +1,5 @@
 ﻿#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UCam.csx"
+#nullable enable
 
 public class S4U : S4UCam
 {

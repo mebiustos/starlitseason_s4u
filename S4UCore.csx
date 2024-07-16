@@ -1,5 +1,6 @@
 ﻿#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UEffect.csx"
 #load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UUtil.csx"
+#nullable enable
 
 //#define CamAutoUsePad
 

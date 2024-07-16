@@ -1,4 +1,5 @@
 ﻿#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UCore.csx"
+#nullable enable
 
 public enum CameraTarget
 {
