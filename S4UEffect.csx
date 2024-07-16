@@ -1,6 +1,6 @@
 ﻿#load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UUtil.csx"
 
-#define STAGE_FOR_YOUメイン画面チェック
+//#define STAGE_FOR_YOUメイン画面チェック
 
 public class S4UEffect
 {
