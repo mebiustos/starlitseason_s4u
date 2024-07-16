@@ -130,7 +130,7 @@ S4Uでの手動操作を簡易的に記録する記録モードと、指定し�
 
    ![mc1-img1](https://imgur.com/xhNLcCL.jpg)
 
-2.作成したREADY.csxを開き、 以下の通り記述し保存。
+2.作成したREADY.csxを開き、 以下の通り記述しCtrl+Sを押して保存。
 ```
 #load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4U.csx"
 #load "Scripts\アイドルマスター スターリットシーズン\extensions\s4u\S4UCam.csx"
