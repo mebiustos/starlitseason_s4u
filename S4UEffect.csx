@@ -119,7 +119,7 @@ public class S4UEffect
                 }
                 sb.AppendLine(");");
             }
-            sb.Append("effect.EndSetting();");
+            sb.AppendLine("effect.EndSetting();");
 
             // コンソールに出力
             Console.Clear();
