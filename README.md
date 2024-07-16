@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/3e35272b-9413-472a-856d-588376b437e5)# StarlitSeason S4U Auto Control Macro
+# StarlitSeason S4U Auto Control Macro
 
 This project provides a KeyToKey macro for automating various actions in the Starlit Season S4U mode.
 
@@ -341,6 +341,8 @@ camDisableからcamEnableで挟まれた間にあるカメラ関連コマンド�
 この機能は作者の動作環境に最適化されているため、そのままでは正しく動作しない可能性があります。
 
 その際は[対処法](#演出スロットの保存と復元がうまく動作しない場合の対処法)を参考に調整してみてください。
+
+また、４K解像度での動作が必須条件となります。
 ### 演出スロットの保存
 1. 画面左メニューから、割り当て設定（キーボード／マウス）を選択、画面に表示された「F9」をクリックし、表示されたメニューから「マクロを割り当て（押したら）」を選択。マクロ選択画面になるので「S4U演出スロット設定コード生成」を選択して決定。
 2. 画面左メニューの一番下のディスクマークをクリックし、ここまでの設定を保存してKeyToKeyに反映させましょう。
