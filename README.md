@@ -350,10 +350,10 @@ camDisableからcamEnableで挟まれた間にあるカメラ関連コマンド�
    ![演出保存2-img1](https://imgur.com/xQzRfBV.jpg)
 3. STAGE FOR YOU!のメイン画面に移動し、このメイン画面でF9を押すと自動で演出カスタム画面に移動し演出スロット設定のスキャン処理が始まります。
    
-   ![演出保存3-img1](https://imgur.com/XGGlMKY.jpg)
+   ![演出保存3-img1](https://imgur.com/bwNulmT.jpg)
 4. 演出スロット設定のスキャン処理が終わるまで待ちます。
 
-   ![演出保存4-img1](https://imgur.com/D5HcxWU.jpg)
+   ![演出保存4-img1](https://imgur.com/Vhde4fP.jpg)
 5. スキャン処理が終わるとSTAGE FOR YOU!のメイン画面に自動で戻ってきます。これで処理は終了です。クリップボードに演出スロットの復元コードがコピーされました。
   
    もし、いつまでもスキャン処理が終わらない場合はループしてます。正しく動作させるには各種WAIT値を調整する必要があります。詳しくは[対処法](#演出スロットの保存と復元がうまく動作しない場合の対処法)を参照してください。
