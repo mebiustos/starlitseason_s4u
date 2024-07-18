@@ -296,6 +296,7 @@ public class S4UEffect
 
         SelectTargetType(type);
         Tap(Keys.Enter);
+        _globals.Wait(waitTimeAfterEnteringItemList);
         SelectItem(point.X, point.Y);
     }
 
