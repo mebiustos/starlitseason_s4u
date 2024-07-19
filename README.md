@@ -386,6 +386,16 @@ camDisableからcamEnableで挟まれた間にあるカメラ関連コマンド�
    ![演出復元2-img1](https://imgur.com/xQzRfBV.jpg)
 ### 演出スロットの保存と復元がうまく動作しない場合の対処法（執筆中）
 (執筆中)
+1. 演出スロットツール.csxの修正
+```
+// カーソル自動操作（キー入力後）後のWAIT値(デフォルト50)
+effect.SetWaitTimeAfterUp(100);
+
+// アイテム選択へ移動後のWAIT値(デフォルト100)
+effect.SetWaitTimeAfterEnteringItemList(200);
+```
+
+2. 演出スロットツール.csxの修正
 ```
 // カーソル自動操作（キー入力後）後のWAIT値(デフォルト50)
 effect.SetWaitTimeAfterUp(100);
