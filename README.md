@@ -384,9 +384,10 @@ camDisableからcamEnableで挟まれた間にあるカメラ関連コマンド�
 8. 画面左メニューの一番下のディスクマークをクリックし、設定を保存してKeyToKeyに反映させましょう。
 
    ![演出復元2-img1](https://imgur.com/xQzRfBV.jpg)
-### 演出スロットの保存と復元がうまく動作しない場合の対処法（執筆中）
-(執筆中)
-1. 演出スロットツール.csxの修正(執筆中)
+### 演出スロットの保存と復元がうまく動作しない場合の対処法
+以下の対処で動くようになると思います。
+
+1. 演出スロットツール.csxを開き「var effect = s4u.GetEffect();」の下に以下に示すコードを追加します。
 ```
 // カーソル自動操作（キー入力後）後のWAIT値(デフォルト50)
 effect.SetWaitTimeAfterUp(100);
@@ -395,7 +396,7 @@ effect.SetWaitTimeAfterUp(100);
 effect.SetWaitTimeAfterEnteringItemList(200);
 ```
 
-2. 復元コードの修正(執筆中)
+2. 曲マクロファイルを開き、復元コード部の「var effect = s4u.GetEffect();」の下に以下に示すコードを追加します。
 ```
 // カーソル自動操作（キー入力後）後のWAIT値(デフォルト50)
 effect.SetWaitTimeAfterUp(100);
@@ -403,7 +404,6 @@ effect.SetWaitTimeAfterUp(100);
 // アイテム選択へ移動後のWAIT値(デフォルト100)
 effect.SetWaitTimeAfterEnteringItemList(200);
 ```
-(執筆中)
 
 ## 開発者MEMO
 imgur管理URL:
