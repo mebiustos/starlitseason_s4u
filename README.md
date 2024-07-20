@@ -19,6 +19,7 @@ This project provides a KeyToKey macro for automating various actions in the Sta
 - [演出スロットの保存と復元](#演出スロットの保存と復元)
   - [演出スロットの保存](#演出スロットの保存)
   - [演出スロットの復元](#演出スロットの復元)
+  - [演出スロットの保存と復元がうまく動作しない場合の対処法](#演出スロットの保存と復元がうまく動作しない場合の対処法)
 ## なにができるのか
 このプロジェクトは、Starlit SeasonのS4Uモードでのアクションを自動化するためのKeyToKeyマクロです。
 
