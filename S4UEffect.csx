@@ -104,7 +104,7 @@ public class S4UEffect
             sb.AppendLine("var s4u = new S4U(@this);");
             sb.AppendLine("var effect = s4u.GetEffect();");
             sb.AppendLine("effect.StartSetting();");
-            // スロット１ マークライト
+            // 演出コード生成
             for (int slot = 1; slot < 9; slot++)
             {
                 sb.Append($"effect.Slot({slot}, ");
@@ -169,12 +169,19 @@ public class S4UEffect
     private Point SearchCurrentSettingItemPoint()
     {
         var itemHeight = 153;
+        var baseLineY_1 = 1205;
+        var baseLineY_2 = 1230;
+
+        int y_1;
+        int y_2;
 
         // line 0-2
         var lineCount = 0;
         for (int i = 0; i < 3; i++)
         {
-            var x = SearchCurrentSettingItemPointCore(1205 + (itemHeight * i));
+            y_1 = baseLineY_1 + (itemHeight * i);
+            y_2 = baseLineY_2 + (itemHeight * i);
+            var x = SearchCurrentSettingItemPointCore(y_1, y_2);
             if (x > -1)
             {
                 return new Point(x, lineCount);
@@ -185,11 +192,13 @@ public class S4UEffect
         // line 3-
         Tap(Keys.Down);
         Tap(Keys.Down);
+        y_1 = baseLineY_1 + (itemHeight * 2);
+        y_2 = baseLineY_2 + (itemHeight * 2);
         while (true)
         {
             Tap(Keys.Down);
             _globals.Wait(waitSearchCurrentItemAfterScroll);
-            var x = SearchCurrentSettingItemPointCore(1524);
+            var x = SearchCurrentSettingItemPointCore(y_1, y_2);
             if (x > -1)
             {
                 return new Point(x, lineCount);
@@ -198,19 +207,36 @@ public class S4UEffect
         }
     }
 
-    private int SearchCurrentSettingItemPointCore(int y)
+    private int SearchCurrentSettingItemPointCore(int y_1, int y_2)
     {
-        int itemWidth = 258;
-        int baseX = 657;
-        int ABOUT = 20;
         int R = 37;
         int G = 186;
         int B = 213;
+        int ABOUT = 20;
+        
+        int itemWidth = 258;
+        int baseX_1 = 657;
+        int baseX_2 = 633;
+
+        int x;
+        int y;
+        System.Drawing.Color color;
+        
         for (int i = 0; i < 10; i++)
         {
-            var x = baseX + (itemWidth * i);
-            var color = GetPixelColor(x, y);
-            //Console.WriteLine($"x:{x} y:{y} R:{color.R} G:{color.G} B:{color.B}");
+            x = baseX_1 + (itemWidth * i);
+            y = y_1;
+            color = GetPixelColor(x, y);
+            //Console.WriteLine($"P1 i={i} x:{x} y:{y} R:{color.R} G:{color.G} B:{color.B}");
+            if (color.R >= R - ABOUT && color.R <= R + ABOUT && color.G >= G - ABOUT && color.G <= G + ABOUT && color.B >= B - ABOUT && color.B <= B + ABOUT)
+            {
+                return i;
+            }
+            
+            x = baseX_2 + (itemWidth * i);
+            y = y_2;
+            color = GetPixelColor(x, y);
+            //Console.WriteLine($"P2 i={i} x:{x} y:{y} R:{color.R} G:{color.G} B:{color.B}");
             if (color.R >= R - ABOUT && color.R <= R + ABOUT && color.G >= G - ABOUT && color.G <= G + ABOUT && color.B >= B - ABOUT && color.B <= B + ABOUT)
             {
                 return i;
